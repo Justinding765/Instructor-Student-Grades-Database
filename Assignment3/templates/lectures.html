@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <title>CSCB20 Lectures</title>
+    </head>
+    <body>
+        <div class="container" id="header">
+            <h1 id="title">CSCB63 -- Design and Analysis of Data Structures</h1>
+        </div>
+        <div class="container" id="nav">
+            <input type="checkbox" value="dropdown" id="dropdown" checked/>
+            <div id="dropdown-container"></div>
+            <div id="links" class="flex">
+                <a href="/">Home</a>
+                <a href="/news">News</a>
+                <a href="/office-hours">Office Hours</a>
+                <a href="/lectures" id="active-page">Lectures</a>
+                <a href="/assignments">Assignments</a>
+                <a href="/labs">Labs</a>
+                <a href="/tutorials">Tutorials</a>
+                <a href="/tests">Tests</a>
+                <a href="/course-team">Course Team</a>
+                <a href="/feedback">Feedback</a>
+                <a href="/links">Links</a>
+                <a href="/profile">Profile</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+        <div class="container pad" id="content">
+            <h1>Lectures</h1>
+            <p>Print and bring the lectures slides/handouts to class each week.</p>
+            <div id="lecture-grid" class="grid">
+                <!-- Each div represents a grid element, every row costs of 6 grid items -->
+
+                <!-- Row 1 - Header -->
+                <div><strong>Week</strong></div>
+                <div><strong>Topic</strong></div>
+                <div><strong>Wed Pre-Lecture Reading/Exercise</strong></div>
+                <div><strong>Thursday Pre-Lecture Reading/Exercise</strong></div>
+                <div><strong>Wednesday Slides/Video</strong></div>
+                <div><strong>Thursday Slides/Video</strong></div>
+                <!-- Row 2 -->
+                <div>1</div>
+                <div>Intro, Worst Case Complexity</div>
+                <div>None</div>
+                <div>CLRS 3.1 (not including little "oh") or watch
+                    <ul>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Big Oh Video</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Insertion Sort Video</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Intro Slides PDF</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Worksheet PDF</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Zoom</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Worksheet1_class Slides PDF</a></li>
+                    </ul>
+                </div>
+                <!-- Row 3 -->
+                <div>2</div>
+                <div>Balanced Trees (AVL)</div>
+                <div>None</div>
+                <div>
+                    Refresh your understanding of binary search trees
+                    <ul>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">video visualization applet</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">worksheet.pdf</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Inclass Worksheet Slides</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Zoom Recording</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Worksheet</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Inclass Worksheet Slides</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Zoom Recording</a></li>
+                    </ul>
+                </div>
+                <!-- Row 4 -->
+                <div>3</div>
+                <div>AVL Trees height, and Augment. Interval Trees</div>
+                <div>None</div>
+                <div>None</div>
+                <div>
+                    <ul>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">AVL trees augmenting worksheet</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">In class worksheet</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Zoom Recording</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Interval Trees Solutions</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Interval Trees In Class</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Zoom Recording</a></li>
+                    </ul>
+                </div>
+                <!-- Row 5 -->
+                <div>4</div>
+                <div>Finish Interval Trees, Heaps and Graph Search Algorithms</div>
+                <div>None</div>
+                <div>Chapter 6.1-6.4</div>
+                <div>
+                    <ul>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Interval Tree Search Proof</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Heaps</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Zoom Link</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Heaps Inclass</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Heaps Building Example</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Zoom Link</a></li>
+                    </ul>
+                </div>
+                <!-- Row 6 -->
+                <div>5</div>
+                <div>Graph Searches and Minimum Spanning Trees</div>
+                <div>Term Test Wed</div>
+                <div>If you have not had your tutorial, read the graph handout on the tutorials page.</div>
+                <div>None</div>
+                <div>
+                    <ul>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Graph Search Slides</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Searches Worksheet</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">MST Slides</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">MST Worksheet</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">MST Worksheet Solutions Updated</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Zoom Link</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">In Class Graph Notes</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">MST in class</a></li>
+                    </ul>
+                </div>
+                <!-- Row 7 -->
+                <div>6</div>
+                <div>Proof of Prims, Dijkstra's Algorithm, Strongly Connected Components</div>
+                <div>Ch 24.3, Practice Prims algorithm</div>
+                <div>22.5, Review DFS - make sure you understand it</div>
+                <div>
+                    <ul>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">MST In Class</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Dijkstra</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Zoom Link</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Strongly Connected Components Slides</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">SCC Examples</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Zoom Link</a></li>
+                    </ul>
+                </div>
+                <!-- Row 8 -->
+                <div>7</div>
+                <div>Amortized Analysis</div>
+                <div>Ch. 17.4, Ch. 21</div>
+                <div>None</div>
+                <div>
+                    <ul>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Amortized Lecture Slides</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Amortized Lecture Slides In Class</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Zoom Link</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Potential Lecture Slides</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Potential Lecture In Class</a></li>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Zoom Link</a></li>
+                    </ul>
+                </div>
+                <!-- Row 9 -->
+                <div>8</div>
+                <div>Disjoint Sets, Fibonacci Heaps</div>
+                <div>Ch. 20</div>
+                <div>
+                    <ul>
+                        <li><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Disjoint Sets</a></li>
+                    </ul>
+                </div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div id="footer" class="container">
+            <a href="https://web.cs.toronto.edu/" target="_blank" id="dept-cs"><p>Faculty of Computer Science at UofT</p></a>
+            <p id="mark">Site designed by Artem Petrishchev, Justin Ding, and Kenneth Tran</p>
+        </div>
+    </body>
+</html>

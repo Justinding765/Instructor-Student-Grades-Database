@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <title>CSCB20 Enter Mark</title>
+    </head>
+    <body>
+        <div class="container" id="header">
+            <h1 id="title">CSCB63 -- Design and Analysis of Data Structures</h1>
+        </div>
+        <div class="container" id="nav">
+            <input type="checkbox" value="dropdown" id="dropdown" checked/>
+            <div id="dropdown-container"></div>
+            <div id="links" class="flex">
+                <a href="/">Home</a>
+                <a href="/news">News</a>
+                <a href="/office-hours">Office Hours</a>
+                <a href="/lectures">Lectures</a>
+                <a href="/assignments">Assignments</a>
+                <a href="/labs">Labs</a>
+                <a href="/tutorials">Tutorials</a>
+                <a href="/tests">Tests</a>
+                <a href="/course-team">Course Team</a>
+                <a href="/feedback">Feedback</a>
+                <a href="/links">Links</a>
+                <a href="/profile">Profile</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+        <div class="container pad">
+            <h2>Enter student marks</h2>
+
+            <form action="/enter-mark" method="POST"> 
+                <label for="student-username">Student Username</label>
+                <br>
+                <input type="text" name="student-username">
+                <br>
+                <label for="student-username">Assignment</label>
+                <br>
+                <select name="assignment-id">
+                    {% for assignment in assignments %}
+                    <option value="{{ assignment['assignment_id'] }}">{{ assignment['assignment_id'] }}</option>
+                    {% endfor %}
+                </select>
+                <br>
+                <label for="grade">Grade</label>
+                <br>
+                <input type="number" step="any" name="grade">
+                <div class="pad"></div>
+                <button type="submit" value="submit">Submit</button>
+            </form>
+		</div>
+
+        <div id="footer" class="container">
+            <a href="https://web.cs.toronto.edu/" target="_blank"><p>Faculty of Computer Science at UofT</p></a>
+            <p id="mark">Site designed by Artem Petrishchev, Justin Ding, and Kenneth Tran</p>
+        </div>
+
+        <script src="{{url_for('static', filename='script.js')}}"></script>
+        <!-- Process any flashed messages by passing it as a parameter to handleMessage in script.js -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <script>handleMessage('{{ message }}');</script>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+    </body>
+</html>

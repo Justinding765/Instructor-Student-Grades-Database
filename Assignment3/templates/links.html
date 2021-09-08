@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <title>CSCB20 Links</title>
+    </head>
+    <body>
+        <div class="container" id="header">
+            <h1 id="title">CSCB63 -- Design and Analysis of Data Structures</h1>
+        </div>
+        <div class="container" id="nav">
+            <input type="checkbox" value="dropdown" id="dropdown" checked/>
+            <div id="dropdown-container"></div>
+            <div id="links" class="flex">
+                <a href="/">Home</a>
+                <a href="/news">News</a>
+                <a href="/office-hours">Office Hours</a>
+                <a href="/lectures">Lectures</a>
+                <a href="/assignments">Assignments</a>
+                <a href="/labs">Labs</a>
+                <a href="/tutorials">Tutorials</a>
+                <a href="/tests">Tests</a>
+                <a href="/course-team">Course Team</a>
+                <a href="/feedback">Feedback</a>
+                <a href="/links" id="active-page">Links</a>
+                <a href="/profile">Profile</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+        <div class="container pad" id="content">
+            <h1>Links</h1>
+            <div class="card">
+                <h2>Piazza</h2>
+                <div class="divider"></div>
+                <p><a href="http://piazza.com/class/kju7e2uwa8p3sf" target="_blank">Link to Piazza</a></p>
+            </div>
+            <div class="card">
+                <h2>MarkUs</h2>
+                <div class="divider"></div>
+                <p><a href="http://markus.utsc.utoronto.ca/cscb63w21/" target="_blank">Link to MarkUs</a></p>
+            </div>
+            <div class="card">
+                <h2>LaTeX</h2>
+                <div class="divider"></div>
+                <p>For LaTeX installations, go to the latex project install <a href="http://latex-project.org/ftp.html" target="_blank">website</a>. Both the Windows and Mac versions listed come with editors as well as the packages and compilers.</p>
+
+                <p>Once you are up and running, I recommend downloading the <a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Not So Short Guide to LaTeX</a>. Everything you need is there, however it may be overkill. You can also start with this <a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">template.tex</a> and add as you need.</p>
+            </div>
+        </div>
+        <div id="footer" class="container">
+            <a href="https://web.cs.toronto.edu/" target="_blank" id="dept-cs"><p>Faculty of Computer Science at UofT</p></a>
+            <p id="mark">Site designed by Artem Petrishchev, Justin Ding, and Kenneth Tran</p>
+        </div>
+    </body>
+</html>

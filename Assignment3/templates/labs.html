@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <title>CSCB20 Labs</title>
+    </head>
+    <body>
+        <div class="container" id="header">
+            <h1 id="title">CSCB63 -- Design and Analysis of Data Structures</h1>
+        </div>
+        <div class="container" id="nav">
+            <input type="checkbox" value="dropdown" id="dropdown" checked/>
+            <div id="dropdown-container"></div>
+            <div id="links" class="flex">
+                <a href="/">Home</a>
+                <a href="/news">News</a>
+                <a href="/office-hours">Office Hours</a>
+                <a href="/lectures">Lectures</a>
+                <a href="/assignments">Assignments</a>
+                <a href="/labs" id="active-page">Labs</a>
+                <a href="/tutorials">Tutorials</a>
+                <a href="/tests">Tests</a>
+                <a href="/course-team">Course Team</a>
+                <a href="/feedback">Feedback</a>
+                <a href="/links">Links</a>
+                <a href="/profile">Profile</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+        <div class="container pad" id="content">
+            <h1>Lab Handouts</h1>
+            <p>Submit on Markus before the designated deadline.</p>
+            <p><strong>Late submissions will receive half marks.</strong></p>
+            <div id="lab-grid" class="grid">
+                <!-- Each div represents a grid element, every row costs of 3 grid items -->
+                
+                <!-- Row 1 - Header -->
+                <div><b>Lab #</b></div>
+                <div><b>Handout</b></div>
+                <div><b>Solutions</b></div>
+                <!-- Row 2 -->
+                <div>1</div>
+                <div><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">handout</a></div>
+                <div><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">solutions</a></div>
+                <!-- Row 3 -->
+                <div>2</div>
+                <div><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">handout</a></div>
+                <div><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">solutions</a></div>
+                <!-- Row 4 -->
+                <div>3</div>
+                <div><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">handout</a></div>
+                <div><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">solutions</a></div>
+                <!-- Row 5 -->
+                <div>4</div>
+                <div><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">handout</a></div>
+                <div><a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">solutions</a></div>
+            </div>
+        </div>
+        <div id="footer" class="container">
+            <a href="https://web.cs.toronto.edu/" target="_blank" id="dept-cs"><p>Faculty of Computer Science at UofT</p></a>
+            <p id="mark">Site designed by Artem Petrishchev, Justin Ding, and Kenneth Tran</p>
+        </div>
+    </body>
+</html>

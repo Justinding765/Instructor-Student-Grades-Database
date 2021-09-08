@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <title>CSCB20 Create Account</title>
+    </head>
+    <body>
+        <div class="container" id="header">
+            <h1 id="title">CSCB63 -- Design and Analysis of Data Structures</h1>
+        </div>
+        <div class="authenticate-form">
+            <h2>Create Account</h2>
+            <form action="/create-account" method="POST"> 
+                <label for="firstname">First Name</label>
+                <br>
+                <input type="text" name="firstname">
+                <br>
+
+                <label for="lastname">Last Name</label>
+                <br>
+                <input type="text" name="lastname">
+                <br>
+
+                <label for="dateofbirth">Date of Birth</label>
+                <br>
+                <input type="date" name="dateofbirth">
+                <br>
+
+                <label for="username">Username</label>
+                <br>
+                <input type="text" name="username">
+                <br>
+
+                <label for="password">Password</label>
+                <br>
+                <input type="password" name="password">
+                <br>
+
+                <label for="accounttype">Account Type</label>
+                <br>
+                <select name="accounttype">
+                    <option value="student">Student</option>
+                    <option value="instructor">Instructor</option>
+                </select>
+
+                <div class="pad"></div>
+
+                <button type="submit" value="submit">Create Account</button>
+
+                <div class="pad"></div>
+                <a href="/">Login</a>
+            </form>
+        </div>
+        <script src="{{url_for('static', filename='script.js')}}"></script>
+        <!-- Process any flashed messages by passing it as a parameter to handleMessage in script.js -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <script>handleMessage('{{ message }}');</script>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </body>
+</html>

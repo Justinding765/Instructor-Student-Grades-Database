@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <title>CSCB20 Feedback for Instructor</title>
+    </head>
+    <body>
+        <div class="container" id="header">
+            <h1 id="title">CSCB63 -- Design and Analysis of Data Structures</h1>
+        </div>
+        <div class="container" id="nav">
+            <input type="checkbox" value="dropdown" id="dropdown" checked/>
+            <div id="dropdown-container"></div>
+            <div id="links" class="flex">
+                <a href="/">Home</a>
+                <a href="/news">News</a>
+                <a href="/office-hours">Office Hours</a>
+                <a href="/lectures">Lectures</a>
+                <a href="/assignments">Assignments</a>
+                <a href="/labs">Labs</a>
+                <a href="/tutorials">Tutorials</a>
+                <a href="/tests">Tests</a>
+                <a href="/course-team">Course Team</a>
+                <a href="/feedback" id="active-page">Feedback</a>
+                <a href="/links">Links</a>
+                <a href="/profile">Profile</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+        <div class="container pad" id="content">
+            <H1>Feedback for {{session['firstname']}} {{session['lastname']}}</H1>
+            <div id="feedback-grid" class="grid">
+                <div><strong>Q1(What do you like about the instructor teaching?)</strong></div>
+                <div><strong>Q2(What do you recommend the instructor to do to improve their teaching?)</strong></div>
+                <div><strong>Q3(What do you like about the labs?)</strong></div>
+                <div><strong>Q4(What do you recommend the lab instructors to do to improve their lab teaching?)</strong></div>
+                {% for item in feedback %}
+                    <div>{{item['Q1']}}</div>
+                    <div>{{item['Q2']}}</div>
+                    <div>{{item['Q3']}}</div>
+                    <div>{{item['Q4']}}</div>
+                {% endfor %}
+            </div>
+        </div>
+        <div id="footer" class="container">
+            <a href="https://web.cs.toronto.edu/" target="_blank"><p>Faculty of Computer Science at UofT</p></a>
+            <p id="mark">Site designed by Artem Petrishchev, Justin Ding, and Kenneth Tran</p>
+        </div>
+    </body>
+</html>

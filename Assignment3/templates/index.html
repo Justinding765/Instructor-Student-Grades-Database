@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <title>CSCB20 Home Page</title>
+    </head>
+    <body>
+        <div class="container" id="header">
+            <h1 id="title">CSCB63 -- Design and Analysis of Data Structures</h1>
+        </div>
+        <div class="container" id="nav">
+            <input type="checkbox" value="dropdown" id="dropdown" checked/>
+            <div id="dropdown-container"></div>
+            <div id="links" class="flex">
+                <a href="/" id="active-page">Home</a>
+                <a href="/news">News</a>
+                <a href="/office-hours">Office Hours</a>
+                <a href="/lectures">Lectures</a>
+                <a href="/assignments">Assignments</a>
+                <a href="/labs">Labs</a>
+                <a href="/tutorials">Tutorials</a>
+                <a href="/tests">Tests</a>
+                <a href="/course-team">Course Team</a>
+                <a href="/feedback">Feedback</a>
+                <a href="/links">Links</a>
+                <a href="/profile">Profile</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+        <div class="container pad" id="content">
+            <h1>Welcome to CSCB63, {{ session['accounttype'] }} {{ session['firstname'] }} {{ session['lastname'] }}!</h1>
+            {% if session['accounttype'] == 'student' %}
+            <p>Click <a href="/profile">here</a> to see your grades.</p>
+            {% elif session['accounttype'] == 'instructor' %}
+            <p>Click <a href="/feedback">here</a> to see feedback from your students.</p>
+            <p>Click <a href="/course-marks">here</a> to see grades and remark requests.</p>
+            <p>Click <a href="/student-names">here</a> to see all student names.</p>
+            {% endif %}
+
+            <div class="card">
+                <h2>Course Description</h2>
+                <div class="divider"></div>
+                <p>
+                    Design, analysis, implementation and comparison of efficient data structures for common abstract data types. Priority queues: heaps and mergeable heaps. Dictionaries: balanced binary search trees, B-trees, hashing. Amortization: data structures for managing dynamic tables and disjoint sets. Data structures for representing graphs. Graph searches.
+                </p>
+                <p><b>Exclusion:</b> CSC263H, CSC265H, (CSCC78H)</p>
+                <p><b>Prerequisite: </b> CSCB36H or (CSCB38H) & [CGPA 2.75 or enrolment in a CSC subject POSt]</p>
+                <p><b>Syllabus: </b> <a href="{{ url_for('static', filename='sample_pdf.pdf') }}" target="_blank">Download Syllabus</a></p>
+            </div>
+            <div class="card">
+                <h2>Instructor</h2>
+                <div class="divider"></div>
+                <p>Dr. Anna Bretscher</p>
+                <p>Email: anna.bretscher@utoronto.ca</p>
+                <p>Office: IC 493</p>
+            </div>
+            <div class="card">
+                <h2>Lectures</h2>
+                <div class="divider"></div>
+                <ul>
+                    <li>
+                        <p>Wednesdays 3-4pm</p>
+                        <p><a href="#">Zoom Link</a></p>
+                    </li>
+                    <li>
+                        <p>Thursdays 9:10-11:00</p>
+                        <p><a href="#">Zoom Link</a></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <h2>Office Hours</h2>
+                <div class="divider"></div>
+                <ul>
+                    <li><p>Mondays 11:00-12:30</p></li>
+                    <li><p>Fridays 10:40-11:30</p></li>
+                </ul>
+                <p><i>Please see the calendar for weekly changes.</i></p>
+            </div>
+        </div>
+        <div id="footer" class="container">
+            <a href="https://web.cs.toronto.edu/" target="_blank"><p>Faculty of Computer Science at UofT</p></a>
+            <p id="mark">Site designed by Artem Petrishchev, Justin Ding, and Kenneth Tran</p>
+        </div>
+        <script src="{{url_for('static', filename='script.js')}}"></script>
+        <!-- Process any flashed messages by passing it as a parameter to handleMessage in script.js -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <script>handleMessage('{{ message }}');</script>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </body>
+</html>

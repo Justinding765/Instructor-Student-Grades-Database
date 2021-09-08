@@ -1,0 +1,301 @@
+/*
+=======================
+Global Styling
+=======================
+*/
+
+body {
+    background-color: rgb(249, 253, 250);
+    font-family: Tahoma, sans-serif;
+    margin: 1% 10% 1% 10%;
+}
+
+a {
+    color:rgb(92, 129, 105);
+}
+
+a:hover {
+    color:rgb(127, 148, 134);
+}
+
+a:active {
+    color:rgb(71, 104, 82);
+}
+
+.grey {
+    color: grey;
+}
+
+textarea {
+    resize: none;
+	width: 100%;
+	height: 120px;
+	border: 2px rgb(82, 114, 94) solid;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+}
+
+input[type="text"], input[type="password"], input[type="date"], input[type="number"] {
+    resize: none;
+	width: 75%;
+	height: 20px;
+	border: 2px rgb(82, 114, 94) solid;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+}
+
+select {
+	width: 78%;
+	height: 35x;
+	border: 2px rgb(82, 114, 94) solid;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+}
+
+button[type="submit"] {
+	width: 200px;
+    height: 50px;
+	font-family: Tahoma, sans-serif;
+    font-size: 15px;
+    border: 1px rgb(82, 114, 94) solid;
+    cursor: pointer;
+    background-color: rgb(132, 177, 154);
+    border-radius: 5px;
+}
+
+button[type="submit"]:hover {
+    background-color: rgb(153, 202, 177);
+}
+
+label {
+    font-size: 16px;
+    display: inline-block;
+    padding-top: 15px;
+}
+
+
+/*
+=======================
+Navigation Bar
+=======================
+*/
+
+#nav {
+    border: 1px rgb(136, 172, 150) solid;
+    position: sticky;
+    top: 0;
+    background-color: rgb(208, 238, 219);
+}
+
+#nav #links {
+    justify-content: space-evenly;
+}
+
+#nav #links #active-page {
+    text-decoration: underline;
+}
+
+#nav #links a, #nav #links a:visited {
+    padding: 5px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+#nav #links a:hover {
+    font-weight: bold;
+}
+
+#nav #links a:active {
+    font-style: italic;
+}
+
+/* The dropdown container is laid directly over the dropdown checkbox element */
+#dropdown-container {
+    position: relative;
+    right: 35px;
+    bottom: 10px;
+    width: 25px;
+    height: 25px;
+    pointer-events: none;
+    display: none;
+}
+
+/* This creates an "arrow up" image on the dropdown */
+#dropdown-container::after {
+    content: '';
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: translate(7px, 3px) rotate(-135deg);
+    -webkit-transform: translate(7px, 3px) rotate(-135deg);
+}
+
+/* This hides the dropdown checkbox element */
+#dropdown {
+    opacity: 0;
+    display: none;
+    width: 26px;
+    height: 26px;
+}
+
+/*
+=======================
+Main Content
+=======================
+*/
+
+.authenticate-form {
+    max-width: 500px;
+    min-height: 400px;
+    background-color: rgb(241, 255, 246);
+    border: 1px rgb(136, 172, 150) solid;
+    text-align: center;
+    margin: auto;
+    padding: 2%;
+}
+
+.container {
+    border: 1px rgb(136, 172, 150) solid;
+    padding: 10px;
+    margin: 10px;
+}
+
+.divider {
+    border-bottom: 2px rgb(111, 138, 121) solid;
+}
+
+.pad {
+    padding: 5%;
+}
+
+.card {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#header {
+    background-color: #A8D5BAFF;
+}
+
+#header #title {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+}
+
+#content {
+    height: auto;
+    background-color: rgb(241, 255, 246);
+}
+
+#footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(241, 255, 246);
+}
+
+/* The Lectures grid should have 6 columns, so repeat 6 times */
+#lecture-grid {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+/* The Tutorials and Feedback grid should have 4 columns, so repeat 4 times */
+#tutorial-grid, #feedback-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* The Labs and Student Info grid should have 3 columns, so repeat 3 times */
+#lab-grid, #student-info-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* The Grades grid should have 5 columns, so repeat 5 times */
+#grades-grid {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.grid {
+    display: grid;
+    border-top: 1px solid rgb(92, 129, 105);
+    border-right: 1px solid rgb(92, 129, 105);
+}
+
+.grid > div {
+    border-left: 1px solid rgb(92, 129, 105);
+    border-bottom: 1px solid rgb(92, 129, 105);
+    padding: 10px;
+    text-align: center;
+}
+
+.course-team {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.course-team > div {
+    max-width: 300px;
+    margin: 10px;
+    flex: 1;
+}
+
+/*
+=======================
+Responsive Design
+=======================
+*/
+
+@media only screen and (max-width: 1000px) {
+    /* Only display the navigation dropdown button if the screen is small enough */
+    #dropdown-container, #dropdown {
+        display: inline-block;
+    }
+
+    /* Turn the navigation links and footer into a column direction flexbox if the screen is too small */
+    #nav #links, #footer {
+        flex-direction: column;
+    }   
+
+    /* When the dropdown checkbox is checked, hide the navbar */
+    #dropdown:checked ~ #links {
+        display: none;
+    }
+
+    /* When the dropdown checkbox is checked, this creates an "arrow down" image on the dropdown */
+    #dropdown:checked ~ #dropdown-container::after {
+        content: '';
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        padding: 3px;
+        transform: translate(7px) rotate(45deg);
+        -webkit-transform: translate(7px) rotate(45deg);
+    }
+    
+    /* Turn the tutorials grid into a column direction flexbox if the screen is too small */
+    #tutorial-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Turn the grades grid into a column direction flexbox if the screen is too small */
+    #grades-grid {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 1278px) {
+    /* Turn the lectures grid into a column direction flexbox if the screen is too small */
+    #lecture-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Turn the feedback grid into a column direction flexbox if the screen is too small */
+    #feedback-grid {
+        display: flex;
+        flex-direction: column;
+    }
+}
